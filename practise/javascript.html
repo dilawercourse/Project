@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Daily Practice</title>
+</head>
+<body>
+  <h2>JavaScript Daily 10-Minute Practice</h2>
+  <div id="output"></div>
+  <hr>
+
+  <!-- Interactive Practice -->
+  <h3>Interactive Practice</h3>
+  <input type="text" id="userName" placeholder="Apna naam likho">
+  <button onclick="greet()">Submit</button>
+  <p id="msg"></p>
+
+  <script>
+    // Helper function to show output on page
+    function show(text) {
+      document.getElementById("output").innerHTML += text + "<br>";
+    }
+
+    // 🔹 Minute 1–2 → Variables
+    let name = "Dilawer";
+    const country = "Pakistan";
+    var age = 25;
+    show("Variables: " + name + ", " + country + ", " + age);
+
+    // 🔹 Minute 3–4 → Data Types
+    let city = "Karachi";          // string
+    let salary = 50000;            // number
+    let married = false;           // boolean
+    let bonus = null;              // null
+    let kids;                      // undefined
+    let person = {name:"Ali", age:30}; // object
+    let fruits = ["Apple","Banana"];   // array
+    show("Data Types: " + city + ", " + salary + ", " + married + ", " + bonus + ", " + kids);
+    show("Person: " + JSON.stringify(person));
+    show("Fruits: " + fruits.join(", "));
+
+    // 🔹 Minute 5–7 → Functions
+    function add(a, b) {
+      return a + b;
+    }
+    show("Add(5,7): " + add(5,7));
+
+    function sayHello(name) {
+      return "Hello, " + name;
+    }
+    show(sayHello("Dilawer"));
+
+    // 🔹 Minute 8–10 → Interactive
+    function greet() {
+      let name = document.getElementById("userName").value;
+      if(name === "") {
+        document.getElementById("msg").innerText = "Please enter your name!";
+      } else {
+        document.getElementById("msg").innerText = "Hello " + name + ", welcome!";
+      }
+    }
+  </script>
+</body>
+</html>
